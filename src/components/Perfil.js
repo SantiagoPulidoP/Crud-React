@@ -1,5 +1,7 @@
 import React from "react";
 import "../assets/styles/components/perfil.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { userInfo } from "../mocks/usario";
 import userIcon from "../assets/static/usuario.svg";
 import apellidoIcon from "../assets/static/apellido.svg";
@@ -9,7 +11,10 @@ import fechaIcon from "../assets/static/fecha.svg";
 
 const Perfil = () => (
   <div className="perfil">
-    <button>Regresar</button>
+    <button>
+      {" "}
+      <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+    </button>
     <div className="informacion">
       <div className="datos">
         <img src={userIcon} alt="" className="icono" />

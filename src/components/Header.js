@@ -6,6 +6,7 @@ const Header = () => {
   return (
     <header className="header">
       <h1>Welcome home</h1>
+      <Link to="/figuras">Figuras y modalidades</Link>
       <div className="header-menu">
         <div className="header-menu-profile">
           <img src={userIcon} alt="" />
