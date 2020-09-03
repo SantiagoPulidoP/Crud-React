@@ -1,16 +1,31 @@
 .header {
   align-items: center;
-  background: #8f57fd;
+  background: #323030;
   color: white;
   display: flex;
-  height: 100px;
+  height: 70px;
   justify-content: space-between;
   top: 0px;
   width: 100%;
+  h1 {
+    margin-left: 15px;
+  }
+  #inicio {
+    color: white;
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
 }
 
 .header-menu {
   margin-right: 30px;
+}
+
+.menu-logged {
+  display: flex;
+  flex-direction: column;
 }
 
 .header-menu ul {

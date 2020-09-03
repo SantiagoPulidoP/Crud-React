@@ -5,7 +5,7 @@ import Figuras from "./Figuras";
 import Modalidades from "./Modalidades";
 
 const FigurasModalidades = () => {
-  const [showFiguras, setShowFiguras] = useState(false);
+  const [showFiguras, setShowFiguras] = useState(true);
   const [showModalidades, setShowModalidades] = useState(false);
 
   const handleClickFiguras = () => {

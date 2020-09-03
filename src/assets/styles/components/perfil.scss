@@ -1,8 +1,11 @@
 .perfil {
   width: 100%;
-  max-width: 80%;
-  margin: auto;
-  border: 1px solid blue;
+  max-width: 70%;
+  margin: 80px auto;
+  box-shadow: 0px 2px 10px grey;
+  padding: 25px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .icono {

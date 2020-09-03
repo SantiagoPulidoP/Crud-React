@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalContext } from "./../Context";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 import "../../assets/styles/components/matrix.scss";
 const Matrix = () => {
   let arr = [
@@ -30,33 +32,45 @@ const Matrix = () => {
     false,
     false,
   ];
-  const { figure, setFigure } = useContext(GlobalContext);
+
   const handleOnClick = (e) => {
-    let index = parseInt(e.target.id);
     e.target.classList.toggle("selected");
+    let index = parseInt(e.target.id);
     arr[index] = !arr[index];
     if (arr.includes(true)) {
-      document.querySelector("button").disabled = false;
+      document.querySelector(".btn").classList.remove("disabled");
     } else {
-      document.querySelector("button").disabled = true;
+      document.querySelector(".btn").classList.add("disabled");
     }
   };
 
-  const handleOnClickButton = (e) => {
-    setFigure((prevFig) => [...prevFig, arr]);
+  const handleOnClickButton = () => {
+    let inputNombre = document.getElementById("nombre");
+
+    axios
+      .post("https://fake-api-crud.herokuapp.com/figuras", {
+        nombreFigura: inputNombre.value,
+        patronFigura: arr,
+      })
+      .then((res) => console.log(res.data));
   };
   return (
     <div className="matrix">
-      <label htmlFor="">Nombre de la Figura</label>
-      <input type="text" name="nombre" id="nombre" />
-      <div className="container">
+      <div className="form-group">
+        <label>Nombre de la Figura: </label>
+        <input className="form-control" type="text" name="nombre" id="nombre" />
+      </div>
+      <div className="container-matrix">
         {arr.map((i, index) => {
           return <div className="col-sm celda" key={index} id={index} onClick={handleOnClick}></div>;
         })}
       </div>
-      <Link className="crear-figura" onClick={handleOnClickButton} disabled>
-        <button>Crear Figura</button>
-      </Link>
+
+      <div className="form-group crear">
+        <Link to="/figuras" className="crear-figura  btn btn-primary disabled form-control" onClick={handleOnClickButton}>
+          Crear Figura
+        </Link>
+      </div>
     </div>
   );
 };

@@ -1,9 +1,28 @@
-.container {
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(5, 90px);
-  gap: 3px;
+.container-matrix {
   width: 100%;
+  max-width: 75%;
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  gap: 5px 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto;
+}
+.matrix {
+  .form-group {
+    #nombre {
+      max-width: 50%;
+      margin: 0 15px;
+      display: inline;
+    }
+  }
+  .crear {
+    text-align: center;
+    .crear-figura {
+      max-width: 20%;
+      margin: 15px 0 20px 0;
+    }
+  }
 }
 
 .celda {

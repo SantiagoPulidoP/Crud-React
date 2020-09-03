@@ -1,6 +1,15 @@
 .newFiguraContainer {
-  border: 1px solid black;
+  box-shadow: 0px 5px 5px grey;
   width: 100%;
   max-width: 75%;
   margin: auto;
+  .form-group {
+    padding: 10px;
+    #opciones {
+      max-width: 50%;
+      text-align: center;
+      margin: 0 15px;
+      display: inline;
+    }
+  }
 }
